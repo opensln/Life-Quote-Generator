@@ -1,0 +1,115 @@
+﻿@model IEnumerable<QuoteBank2.Models.QuotesTBL>
+
+@{
+    ViewBag.Title = "QuotesList";
+}
+<html>
+<head>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <style>
+        body {
+            box-sizing: border-box;
+        }
+
+    </style>
+</head>
+<body id="quotesListBody" style="margin-top:-50px;">
+
+    <div id="QuotesListMainSection">
+
+        @*<h2 id="QuotesTablesTitle" style="text-align:center;">Quotes List</h2>*@
+
+        <div id="AdminHeader" style="display:block;">
+            <p id="addQuoteButton" class="col-sm-4 pull-left" style="display:inline-block;">@Html.ActionLink("Add a Quote", "AddQuote", "Quotes", new { @class = "btn btn-default" })</p>
+
+            <h2 id="QuotesPageTitle" class="col-sm-4 text-center" style="margin-top:0px;padding-top:8px;">Quotes List</h2>
+
+            <div id="QuotesSearchBox" class="col-sm-4 text-center" style="display:inline-block;">
+                @using (Html.BeginForm(new { @class = "" }))
+                {
+
+                    @Html.TextBox("searchString", null, new { placeholder = "Search by keyword", @class = "formInline", id = "myID" })
+                    <button id="QuoteSearchSubmit" style="display:inline;" type="submit" class="btn btn-default ">
+                        <i class="glyphicon glyphicon-search"></i>
+                    </button>
+
+                    @*<button id="btnReset" class="btn btn-default"
+                            data-resetQuotesList="reset">
+                        <i class="glyphicon glyphicon-floppy-disk"></i>&nbsp;Reset
+                    </button>*@
+
+
+                    <button id="QuoteSearchReset" style="display:inline;" class="btn btn-default ">
+                        @Html.ActionLink("Reset", "QuotesList", "Quotes") <i class="glyphicon glyphicon-share-alt"></i>
+                    </button>
+
+
+                }
+
+
+            </div>
+      
+
+        </div>
+
+        <section id="QuotesTable">
+            <!--        style="display: none;"-->
+            <!--        - - - - - - Zero Box - - - - - -->
+
+            <div id="tableContainer">
+                <table id="yTable" class="table table-striped">
+
+                    <colgroup>
+                        <col span="1" style="width: 10%;">
+                        <col span="1" style="width: 60%;">
+                        <col span="1" style="width: 10%;">
+                        <col span="1" style="width: 10%;">
+                        <col span="1" style="width: 10%;">
+                    </colgroup>
+
+
+
+
+                    <thead style="border: solid grey 2px; border-style:outset;padding: 50px 5px 50px 5px;">
+                        <tr>
+                            <th>Edit</th>
+                            <th>Quote</th>
+                            <th>Author</th>
+                            <th class="rowimage" name="imgcol">Image</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.ActionLink(" Edit", "EditQuote", new { QuoteID = item.QuoteID }, new { @class = "glyphicon glyphicon-edit btn btn-primary" })
+
+                                </td>
+                                <td class="HiddenQuote">@Html.DisplayFor(model => item.Quote) </td>
+                                <td class="authorq">@Html.DisplayFor(model => item.AuthorsTBL.AuthorName)</td>
+                                <td class="HiddenImage rowimage" name="imgcol"><img src="~/Content/Images/authors/@Html.DisplayFor(model => item.AuthorsTBL.AuthorImage)" width="20" /></td>
+                                <td>
+                                    @Html.ActionLink(" Delete", "Delete", new { id = item.QuoteID }, new { @class = "glyphicon glyphicon-th-trash btn btn-danger" })
+
+                                </td>
+
+                            </tr>
+
+                        }
+                    </tbody>
+
+                </table>
+                <p class="text-center">There are currently @ViewBag.ListCount quotes in this list.</p>
+                <br>
+            </div> <!-- End of Table container -->
+
+        </section>
+    </div>
+</body>
+
+</html>

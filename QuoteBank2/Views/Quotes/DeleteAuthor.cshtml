@@ -1,0 +1,84 @@
+﻿@model QuoteBank2.Models.AuthorsTBL
+@{
+    ViewBag.Title = "Delete Author";
+}
+
+<h2 class="text-center">Delete Author</h2>
+<head>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <style>
+        body {
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body id="DeleteQuoteBody" style="margin-top:40px;">
+
+    <div id="DeleteQuoteMainSection">
+
+        @*<h2 id="QuotesTablesTitle" style="text-align:center;">Quotes List</h2>*@
+
+        <div id="AdminHeader" style="display:block;">
+            <p id="addQuoteButton" style="position:absolute;left:5px;z-index:10;">@Html.ActionLink("Back To Author Admin", "AuthorList", "Quotes", new { @class = "btn btn-default" })</p>
+
+            <h2 id="QuotesPageTitle" class="col-sm-12 text-center" style="margin-top:0px;padding-top:8px;">Are you sure you want to delete this Author?</h2>
+
+        </div>
+
+        <section id="AuthorTable">
+            <!--        style="display: none;"-->
+            <!--        - - - - - - Zero Box - - - - - -->
+
+            <div id="tableContainer">
+                <table id="yTable" class="table table-striped">
+
+                    <colgroup>
+                        <col span="1" style="width: 10%;">
+                        <col span="1" style="width: 60%;">
+                        <col span="1" style="width: 10%;">
+                        <col span="1" style="width: 20%;">
+                    </colgroup>
+
+
+
+
+                    <thead style="border: solid grey 2px; border-style:outset;padding: 50px 5px 50px 5px;">
+                        <tr>
+                            <th>AuthorID</th>
+                            <th>Author</th>
+                            <th class="rowimage" name="imgcol">Image</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="">@Model.AuthID</td>
+                            <td class="">@Model.AuthorName</td>
+                            <td class="HiddenImage rowimage" name="imgcol"><img src="~/Content/Images/authors/@Model.AuthorImage" width="20" /></td>
+                            <td>
+                                @using (Html.BeginForm())
+                                {
+                                    @Html.AntiForgeryToken()
+
+                                    @*<div class="form-actions no-color">*@
+                                    <input type="submit" value="Confirm Delete" class="btn btn-danger" />
+
+                                    @*</div>*@
+                                }
+                            </td>
+
+                        </tr>
+
+
+                    </tbody>
+
+                </table>
+
+                <br>
+            </div> <!-- End of Table container -->
+
+        </section>
+    </div>
+

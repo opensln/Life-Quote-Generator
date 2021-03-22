@@ -1,0 +1,406 @@
+﻿body {
+    padding-top: 20px;
+    margin-top: 20px;
+
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/*-----------------------------------------------Quotes CSS----------------------------*/
+body {
+    box-sizing: border-box;
+}
+
+#quotesCardsBody,
+#quotesPageBody {
+    background: url("/content/images/bg1-waterHand.jpg") no-repeat top center;
+    background-size: cover;
+}
+
+.Quotesheaderbar {
+    height: 50px;
+    background-color: green;
+    background: rgba(255, 255, 255, 0.2);
+    z-index: 10;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+
+    .Quotesheaderbar h1 {
+        font-family: 'Acme', sans-serif;
+        color: purple;
+        margin: 5px 0px 0px 10px;
+        display: inline-block;
+        /*            	float: left;*/
+    }
+
+#QuotesnavBar {
+    float: right;
+    width: auto;
+}
+
+#QuotesnavBar  ul {
+    position: relative;
+    top: -5px;
+    /*            	display: inline-block;*/
+    background-color: transparent;
+    margin: 8px 5px 0px 5px;
+    padding: 0px 5px 0px 0px;
+}
+
+#QuotesnavBar  li {
+    /*            	text-align: center;*/
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 5px 10px 0px 10px;
+    margin: 0px 0px 0px 0px;
+    border: none;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 27px;
+}
+
+.Quotesheaderbar a {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+}
+
+    .Quotesheaderbar a:hover {
+        color: darkslategray;
+        cursor: pointer;
+    }
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/*---------------------------------------------------------AdminHeader--------------------------------------------------*/
+
+#AdminHeader {
+    display: block;
+    width: 100%;
+    height: 50px;
+    margin-top: 10px;
+    display: block;
+    background-color: white;
+    position: relative;
+    border: 1px solid black;
+    border-radius: 10px 10px 0px 0px;
+}
+
+#QuotesPageTitle {
+  
+}
+
+#addQuoteButton {
+    margin-top: 7px;
+}
+
+#QuoteSearchSubmit,
+#QuoteSearchReset
+{
+    margin-bottom: 3px;
+}
+
+#AuthorSearchBox {
+    border: 1px solid black;
+}
+
+.quoteFormWidth {
+    background-color:deeppink;
+    width:50%;
+}
+
+.formInline {
+    display: inline-block;
+    width: 50%;
+    height: 34px;
+    padding: 6px 12px;
+    margin-top: 6px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+/*-----------------------------------------------------------End Admin Header---------------------------------------------*/
+
+#Quotesection {
+    margin: 45px 0px 0px 0px;
+}
+
+
+
+
+#hiddenQuotesDiv {
+    /*text-align: center;*/
+    display: none;
+}
+
+
+#mainQuoteBox {
+    font-family: 'Cinzel', serif;
+    text-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+    margin-bottom: 0px;
+
+    background: rgba(50, 50, 50, 0.5);
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.author {
+    font-size: 3rem;
+    color: white;
+    font-family: 'Courgette', cursive;
+}
+
+#authorReveal {
+    display: block;
+    text-align: center;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:10px;
+}
+
+img {
+    text-align: center;
+}
+
+#mainSection {
+    margin-top: 45px;
+}
+
+#QuotesListMainSection {
+    margin-top: 94px;
+}
+
+
+#pictureDiv {
+    width: 200px;
+    height: 240px;
+    border: solid 1px black;
+    border-radius: 10px;
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.quoteButton {
+    font-size: 1.9rem;
+    text-align: center;
+    display: block;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    background: rgba(50, 50, 50, 0.5);
+    width: 200px;
+    color: white;
+    padding: 10px 0 5px 0;
+
+    text-transform: uppercase;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
+}
+
+    .quoteButton:hover {
+        background-color: white;
+        /* Green */
+        color: grey;
+        box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+        cursor: pointer;
+    }
+
+    @media only screen and (min-width:530px) {
+    .intro {
+        padding-top: 20%;
+            }
+}
+
+table {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+th,
+tr,
+td
+ {
+    text-align:center;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+th {
+    background: black;
+    color: white;
+    padding: 20px;
+}
+
+td {
+    white-space: normal;
+}
+
+colButton {
+    border-radius: 10px;
+    background: grey;
+    width: 200px;
+    color: white;
+}
+
+#columnButtonDiv {
+    text-align: center;
+    margin: 5px 0px 5px 0px;
+}
+
+.colButton:hover {
+    color: white;
+    background-color: black;
+    cursor: pointer;
+}
+
+.aboutBubble {
+    position: relative;
+    display: inline-block;
+}
+
+    .aboutBubble .abouttext {
+        visibility: hidden;
+        width: 210px;
+        height: 45px;
+        /*  background-color: black;*/
+        background: rgba(255, 255, 255, 0.2);
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 5px;
+        position: absolute;
+        z-index: 1;
+        top: 135%;
+        left: -150%;
+        margin-left: -60px;
+    }
+
+        .aboutBubble .abouttext::after {
+            content: "";
+            position: absolute;
+            top: -45%;
+            left: 86%;
+            margin-left: -20px;
+            border-width: 10px;
+            border-style: solid;
+            border-color: transparent transparent rgba(255, 255, 255, 0.2) transparent;
+        }
+
+    .aboutBubble:hover .abouttext {
+        visibility: visible;
+    }
+
+
+
+
+/*            --------------------------------------------------------Media Queries-----------------------------------------------*/
+
+
+@media only screen and (max-width: 768px) {
+    /* For ipad */
+
+    .quoteButton {
+        width: 50%;
+        font-size: 2.5rem;
+    
+    }
+}
+
+@media only screen and (max-width: 590px) {
+    /* For mobile */
+
+    .Quotesheaderbar {
+        position: relative;
+        height: 35px;
+    }
+
+    .quoteButton {
+        width: 60%;
+        font-size: 1.6rem;
+    }
+
+    #QuotesnavBar {
+        display: none;
+    }
+
+    h1 {
+        display: block;
+        float: none;
+        text-align: center;
+        font-size: 1.8rem;
+    }
+
+    /*#hiddenQuotesDiv {
+        display:block;
+    }*/
+    @-webkit-keyframes zoomInUp {
+        from {
+            opacity: 0;
+            -webkit-transform: scale3d(0.1, 0.1, 0.1) translate3d(0, 1000px, 0);
+            transform: scale3d(0.1, 0.1, 0.1) translate3d(0, 1000px, 0);
+            -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+            animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+        }
+
+        60% {
+            opacity: 1;
+            -webkit-transform: scale3d(0.475, 0.475, 0.475) translate3d(0, -60px, 0);
+            transform: scale3d(0.475, 0.475, 0.475) translate3d(0, -60px, 0);
+            -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+            animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+        }
+    }
+
+    .zoomInUp {
+        -webkit-animation-name: zoomInUp;
+        animation-name: zoomInUp;
+    }
+}
+
+
+

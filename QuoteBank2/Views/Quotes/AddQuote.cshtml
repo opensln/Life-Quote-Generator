@@ -1,0 +1,31 @@
+﻿@model QuoteBank2.Models.QuotesTBL
+@{
+    ViewBag.Title = "AddQuote";
+}
+<h3>@ViewBag.AlertAuthorsListable</h3>
+
+<h2>AddQuote</h2>
+@using (Html.BeginForm("AddQuote", "Quotes"))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+
+<div class="form-group">
+    @Html.LabelFor(m => m.Quote) @*From normal model*@
+    @Html.TextAreaFor(m => m.Quote, new { @class = "form-control" }) @*From normal model*@
+
+    @Html.ValidationMessageFor(m => m.Quote, "", new { @class = "text-danger" })
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(m => m.AuthorsTBL.AuthorName) @*From normal model through the include() Method*@
+    @Html.DropDownListFor(m => m.AuthorsTBLAuthID,@* AuthorsTBLAuthID From normal model*@
+    new SelectList(@ViewBag.ListToScreen, @* ViewBag of AuthorsListable from the QuoteViewModel*@
+    "AuthID", "AuthorName"), "Choose an Author", new { @class = "form-control" })
+
+    @Html.ValidationMessageFor(m => m.AuthorsTBLAuthID, "", new { @class = "text-danger" })
+</div>
+    <button type="submit" class="btn btn-primary">Save</button>
+}
+<br />
+<p class="btn btn-default" color:black;>@Html.ActionLink("Back to Admin", "QuotesList")</p>

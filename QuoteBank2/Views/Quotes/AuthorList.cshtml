@@ -1,0 +1,106 @@
+﻿@model IEnumerable<QuoteBank2.Models.AuthorsTBL>
+
+@*@{
+    ViewBag.Title = "AuthorList";
+}*@
+<head>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <style>
+        body {
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body id="quotesListBody" style="margin-top:-50px;">
+
+    <div id="QuotesListMainSection">
+
+        @*<h2 id="QuotesTablesTitle" style="text-align:center;">Quotes List</h2>*@
+
+        <div id="AdminHeader" style="display:block;">
+            <p id="addQuoteButton" class="col-sm-4 pull-left" style="display:inline-block;">@Html.ActionLink("Add an Author", "AddAuthor", "Quotes", new { @class = "btn btn-default" })</p>
+
+            <h2 id="QuotesPageTitle" class="col-sm-4 text-center" style="margin-top:0px;padding-top:8px;">Authors List</h2>
+        </div>
+            @*<div id="AuthorSearchBox" class="col-sm-12 text-center">
+                @using (Html.BeginForm(new { @class = "" }))
+                {
+
+                    @Html.TextBox("searchString", null, new { placeholder = "Search by keyword", @class = "formInline", id = "myID" })
+                    <button id="QuoteSearchSubmit" style="display:inline;" type="submit" class="btn btn-default ">
+                        <i class="glyphicon glyphicon-search"></i>
+                    </button>*@
+
+                    @*<button id="btnReset" class="btn btn-default"
+                                data-resetQuotesList="reset">
+                            <i class="glyphicon glyphicon-floppy-disk"></i>&nbsp;Reset
+                        </button>
+
+
+                    <button id="QuoteSearchReset" style="display:inline;" type="" class="btn btn-default ">
+                        @Html.ActionLink("Reset", "QuotesList", "Quotes") <i class="glyphicon glyphicon-share-alt"></i>
+                    </button>
+
+
+                }
+
+
+            </div>*@
+
+
+      
+
+        <section id="QuotesTable">
+            <!--        style="display: none;"-->
+            <!--        - - - - - - Zero Box - - - - - -->
+
+            <div id="tableContainer">
+                <table id="yTable" class="table table-striped">
+
+                    <colgroup>
+                        <col span="1" style="width: 10%;">
+                        <col span="1" style="width: 60%;">
+                        <col span="1" style="width: 10%;">
+                        <col span="1" style="width: 10%;">
+                        <col span="1" style="width: 10%;">
+                    </colgroup>
+
+
+
+
+                    <thead style="border: solid grey 2px; border-style:outset;padding: 50px 5px 50px 5px;">
+                        <tr>
+                         
+                            <th>AuthorID</th>
+                            <th>Author</th>
+                            <th class="rowimage" name="imgcol">Image</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach (var author in Model)
+                        {
+                            <tr>
+                                <td class="">@Html.DisplayFor(model => author.AuthID) </td>
+                                <td class="">@Html.DisplayFor(model => author.AuthorName)</td>
+                                <td class="HiddenImage rowimage" name="imgcol"><img src="~/Content/Images/authors/@Html.DisplayFor(model => author.AuthorImage)" width="20" /></td>
+                                <td>
+                                    @Html.ActionLink(" Delete", "DeleteAuthor", new { id = author.AuthID },
+                                    new { @class = "glyphicon glyphicon-th-trash btn btn-danger" })
+                                </td>
+
+                            </tr>
+
+                        }
+                    </tbody>
+
+                </table>
+                <p class="text-center">There are currently @ViewBag.AuthorCount authors in this list.</p>
+                <br>
+            </div> <!-- End of Table container -->
+
+        </section>
+    </div>

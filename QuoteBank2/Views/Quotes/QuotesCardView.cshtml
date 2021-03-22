@@ -1,0 +1,76 @@
+﻿@model IEnumerable<QuoteBank2.Models.QuotesTBL>
+@{
+    Layout = "";
+}
+<html>
+<head>
+    <title>Life Quote Generator - Quote Cards View</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+ 
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Acme&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cinzel&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Courgette&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body id="quotesCardsBody" style="margin-top:-50px;">
+
+    <div class="Quotesheaderbar">
+        <h1 id="quotesTitle"><a>LIFE QUOTE GENERATOR</a></h1>
+        <div id="QuotesnavBar">
+            <ul style="color: black;">
+                <li>@Html.ActionLink("Get Random Quote", "QuotesPage", "Quotes")</li>
+                <li class="active">@Html.ActionLink("Admin", "QuotesList")</li>
+                <li><a class="aboutInfo aboutBubble" href="#about">About<span class="abouttext" style="text-transform:none;">&copy DanielSmithLDN 2019</span></a></li>
+
+
+
+                <!--
+                          <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                              <li><a href="#">Example menu</a></li>
+                              <li><a href="#">Example menu</a></li>
+                              <li><a href="#">Example menu</a></li>
+                            </ul>
+                          </li>
+                -->
+
+            </ul>
+                                    <div class="clearfix"></div>
+        </div>
+    </div>
+    <section id="mainSection">
+
+
+        <h2 id="quotesListHeader" style="text-align:center;color:white;font-family: 'Yanone Kaffeesatz', sans-serif;font-size:4rem;">Quote Cards View</h2>
+
+        <section class="text-center" style="text-align:center;">
+            @foreach (var item in Model)
+            {
+
+                <div id="QuotesCardHolder" class="col-md-4 zoomInUp" style="height:200px;background-color:transparent;">
+                    <div id="QuoteCardBox"style="border:solid 1px black; margin:0px;height:90%;padding:10px;border-radius:10px;background:rgba(255, 255, 255, 0.8);box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),0 17px 50px 0 rgba(0, 0, 0, 0.19);">
+                        <h4>@Html.DisplayFor(model => item.Quote) </h4> @*<p style="color:blue;">from Quotes Table</p>*@
+                        <p class="glyphicon glyphicon-asterisk" style="color:#265576"></p>
+                        <h4 class="author" style="color:#265576;"> @Html.DisplayFor(model => item.AuthorsTBL.AuthorName)</h4> @*<p style="color:red;">via PrimaryKey</p>*@
+                    </div>
+                </div>
+
+
+            }
+            <div class="clearfix"></div>
+        </section>
+
+    </section>
+</body>
+</html>

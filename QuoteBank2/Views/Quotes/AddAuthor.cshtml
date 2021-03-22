@@ -1,0 +1,47 @@
+﻿@model QuoteBank2.ViewModels.AuthorFormViewModel
+
+@{
+    ViewBag.Title = "AddAuthor";
+}
+
+<style>
+</style>
+
+<section id="addAuthorColumn">
+
+    <h2>AddAuthor</h2>
+    @using (Html.BeginForm("AddAuthor", "Quotes", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary()
+        <div class="form-group">
+            @Html.LabelFor(m => m.AuthorNameVM) @*From AuthorViewModel*@
+            @Html.TextBoxFor(m => m.AuthorNameVM, new { @class = "form-control" }) @*From AuthorViewModel*@
+            @Html.ValidationMessageFor(m => m.AuthorNameVM, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.ImageFileVM) @*From AuthorViewModel*@
+            <input type="file" name="ImageFileVM" />
+            @*@Html.TextBoxFor(m => m.AuthorImage, new { @class = "form-control" })*@
+            @Html.ValidationMessageFor(m => m.ImageFileVM, "", new { @class = "text-danger" })
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+    }
+    <hr />
+    <div style="color:blue;">
+
+
+
+        <h3>@ViewBag.AlertEnteredInfo1</h3>
+        <hr />
+        <h3>@ViewBag.AlertEnteredInfo2</h3>
+    </div>
+
+    <p class="btn btn-default" color:black;>@Html.ActionLink("Back to Author Admin", "AuthorList")</p>
+</section>
+<section id="AuthorListSection">
+    @*@Html.Partial("_AuthorList")*@
+
+
+</section>

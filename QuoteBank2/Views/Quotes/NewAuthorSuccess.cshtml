@@ -1,0 +1,19 @@
+﻿@model QuoteBank2.Models.AuthorsTBL
+
+@{
+    ViewBag.Title = "NewQuoteSuccess";
+}
+
+<div id="NewAuthorSucess" style="text-align:center">
+
+    <h2>Author Successfully Added</h2>
+
+    <h3> You have successfully added:</h3>
+    <h3>"@ViewBag.AlertAuthorName"</h3>
+    <img src="~/Content/Images/authors/@ViewBag.AlertImagePath" width="200" />
+    <h3> Filenmae: @ViewBag.AlertImagePath</h3>
+
+
+    <p class="btn btn-default" color:black;>@Html.ActionLink("Back to Quotes Admin", "QuotesList")</p>
+    <p class="btn btn-default" color:black;>@Html.ActionLink("Back to Author Admin", "AuthorList")</p>
+</div>

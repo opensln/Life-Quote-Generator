@@ -1,0 +1,111 @@
+﻿@model IEnumerable<QuoteBank2.Models.QuotesTBL>
+@{
+                /**/
+
+                Layout = "";
+}
+
+<html>
+
+<head>
+    <title>Life Quote Generator from Pseudo Database</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    @*<link href="~/Content/Site.css" rel="stylesheet" />*@
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Acme&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cinzel&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Courgette&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz&display=swap" rel="stylesheet">
+
+    <style>
+    </style>
+</head>
+
+<body id="quotesPageBody" style="margin-top:-50px;">
+    <div id="mainLanding">
+
+        <div class="Quotesheaderbar">
+            <h1 id="quotesTitle"><a>LIFE QUOTE GENERATOR</a></h1>
+            <div id="QuotesnavBar">
+                <ul style="color: black;">
+                    <li>@Html.ActionLink("View Quote Cards", "QuotesCardView", "Quotes")</li>
+                    <li class="active">@Html.ActionLink("Admin", "QuotesList")</li>
+                    <li><a class="aboutInfo aboutBubble" href="#about">About<span class="abouttext" style="text-transform:none;">&copy DanielSmithLDN 2020</span></a></li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <div id="Quotesection" class="">
+            <div class="quoteButton" onclick="RandomQuote()" style="font-family: 'Yanone Kaffeesatz', sans-serif;">Click Here for a new Quote!</div>
+
+            <div id="pictureDiv" style="text-align: center; font-family: 'Yanone Kaffeesatz', sans-serif; font-size:3.6rem;color:white; z-index: 5;"><br />Author will appear here</div>
+
+            <p id="mainQuoteBox" style="text-align: center;font-size: 3rem;color:white; ">...Quote will go here...</p>
+            <p id="authorReveal" class="author">...</p>
+
+        </div>
+    </div>
+    <section id="hiddenQuotesDiv">
+    
+
+        <div id="tableContainer" class="container">
+            <table id="yTable">
+                <thead style="border: solid grey 2px; border-style:outset;padding: 50px 5px 50px 5px;">
+                    <tr>
+                        <th>Quote</th>
+                        <th>Author</th>
+                        <th class="rowimage" name="imgcol" style="vertical-align: inset;">Image File Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td class="HiddenQuote">@Html.DisplayFor(model => item.Quote)</td>
+                            <td class="authorq">@Html.DisplayFor(model => item.AuthorsTBL.AuthorName)</td>
+                            <td class="HiddenImage rowimage" name="imgcol">@Html.DisplayFor(model => item.AuthorsTBL.AuthorImage)</td>
+                        </tr>
+
+                    }
+                </tbody>
+
+            </table>
+
+
+            <div id="columnButtonDiv">
+                <button class="colButton" onclick="hideImgCol()" style="font-family: 'Yanone Kaffeesatz', sans-serif;">Hide ImageFile Column</button>
+                <button class="colButton" onclick="showImgCol()" style="font-family: 'Yanone Kaffeesatz', sans-serif;">Show ImageFile Column</button>
+            </div>
+
+            <br>
+        </div> <!-- End of Table container -->
+
+    </section>
+
+    <script>
+
+        function RandomQuote() {
+            var QN = Math.floor(Math.random() * @ViewBag.ListCount); //*However many quotes exisit in the table
+
+            var postQuote = document.getElementsByClassName("HiddenQuote")[QN].innerHTML;
+
+            document.getElementById("mainQuoteBox").innerHTML = postQuote;
+
+            var postImg = document.getElementsByClassName("HiddenImage")[QN].innerHTML;
+
+            document.getElementById("pictureDiv").innerHTML = ""; //clear landing message
+
+            document.getElementById("pictureDiv").style = "background-image: url('/content/images/authors/"+postImg+"') ; background-size: cover; background-repeat: no-repeat; overflow: hidden;";
+
+            document.getElementById("authorReveal").innerHTML = document.getElementsByClassName("authorq")[QN].innerHTML;
+        }
+    </script>
+
+</body>
+
+</html>

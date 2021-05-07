@@ -355,7 +355,6 @@ colButton {
     /* For mobile */
 
     .Quotesheaderbar {
-        position: relative;
         height: 35px;
     }
 
@@ -370,9 +369,9 @@ colButton {
 
     h1 {
         display: block;
-        float: none;
         text-align: center;
-        font-size: 1.8rem;
+        font-size: 2.8rem;
+        width: 100%;
     }
 
     /*#hiddenQuotesDiv {

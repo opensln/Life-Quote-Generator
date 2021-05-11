@@ -1,7 +1,6 @@
 ﻿body {
     padding-top: 20px;
     margin-top: 20px;
-
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -27,56 +26,63 @@ textarea {
 /*-----------------------------------------------Quotes CSS----------------------------*/
 body {
     box-sizing: border-box;
+    width: 100%;
+}
+
+#mainLanding {
+    width: 100%;
 }
 
 #quotesCardsBody,
 #quotesPageBody {
     background: url("/content/images/bg1-waterHand.jpg") no-repeat top center;
     background-size: cover;
+    margin-top: -20px;
 }
 
 .Quotesheaderbar {
     height: 50px;
+    width: 100%;
     background-color: green;
     background: rgba(255, 255, 255, 0.2);
     z-index: 10;
-    position: -webkit-sticky;
+    /*  position: -webkit-sticky;
     position: sticky;
-    top: 0;
+    top: 0;*/
 }
 
-    .Quotesheaderbar h1 {
-        font-family: 'Acme', sans-serif;
-        color: purple;
-        margin: 5px 0px 0px 10px;
-        display: inline-block;
-        /*            	float: left;*/
-    }
+.Quotesheaderbar h1 {
+    font-family: 'Acme', sans-serif;
+    color: purple;
+    margin: 5px 0px 0px 10px;
+    display: inline-block;
+    /*            	float: left;*/
+}
 
 #QuotesnavBar {
     float: right;
     width: auto;
 }
 
-#QuotesnavBar  ul {
-    position: relative;
-    top: -5px;
-    /*            	display: inline-block;*/
-    background-color: transparent;
-    margin: 8px 5px 0px 5px;
-    padding: 0px 5px 0px 0px;
-}
+    #QuotesnavBar ul {
+        position: relative;
+        top: -5px;
+        /*            	display: inline-block;*/
+        background-color: transparent;
+        margin: 8px 5px 0px 5px;
+        padding: 0px 5px 0px 0px;
+    }
 
-#QuotesnavBar  li {
-    /*            	text-align: center;*/
-    display: inline-block;
-    background: rgba(255, 255, 255, 0.2);
-    padding: 5px 10px 0px 10px;
-    margin: 0px 0px 0px 0px;
-    border: none;
-    font-family: 'Yanone Kaffeesatz', sans-serif;
-    font-size: 27px;
-}
+    #QuotesnavBar li {
+        /*            	text-align: center;*/
+        display: inline-block;
+        background: rgba(255, 255, 255, 0.2);
+        padding: 5px 10px 0px 10px;
+        margin: 0px 0px 0px 0px;
+        border: none;
+        font-family: 'Yanone Kaffeesatz', sans-serif;
+        font-size: 27px;
+    }
 
 .Quotesheaderbar a {
     text-transform: uppercase;
@@ -110,7 +116,6 @@ body {
 }
 
 #QuotesPageTitle {
-  
 }
 
 #addQuoteButton {
@@ -118,8 +123,7 @@ body {
 }
 
 #QuoteSearchSubmit,
-#QuoteSearchReset
-{
+#QuoteSearchReset {
     margin-bottom: 3px;
 }
 
@@ -128,8 +132,8 @@ body {
 }
 
 .quoteFormWidth {
-    background-color:deeppink;
-    width:50%;
+    background-color: deeppink;
+    width: 50%;
 }
 
 .formInline {
@@ -157,14 +161,10 @@ body {
     margin: 45px 0px 0px 0px;
 }
 
-
-
-
 #hiddenQuotesDiv {
     /*text-align: center;*/
     display: none;
 }
-
 
 #mainQuoteBox {
     font-family: 'Cinzel', serif;
@@ -174,7 +174,6 @@ body {
     margin-right: auto;
     margin-top: 15px;
     margin-bottom: 0px;
-
     background: rgba(50, 50, 50, 0.5);
     border-radius: 10px;
     padding: 5px;
@@ -192,7 +191,7 @@ body {
     max-width: 90%;
     margin-left: auto;
     margin-right: auto;
-    margin-top:10px;
+    margin-top: 10px;
 }
 
 img {
@@ -232,7 +231,6 @@ img {
     width: 200px;
     color: white;
     padding: 10px 0 5px 0;
-
     text-transform: uppercase;
     -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
@@ -243,16 +241,15 @@ img {
 
     .quoteButton:hover {
         background-color: white;
-        /* Green */
         color: grey;
         box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
         cursor: pointer;
     }
 
-    @media only screen and (min-width:530px) {
+@media only screen and (min-width:530px) {
     .intro {
         padding-top: 20%;
-            }
+    }
 }
 
 table {
@@ -263,9 +260,8 @@ table {
 
 th,
 tr,
-td
- {
-    text-align:center;
+td {
+    text-align: center;
     border: 1px solid black;
     padding: 10px;
 }
@@ -347,7 +343,6 @@ colButton {
     .quoteButton {
         width: 50%;
         font-size: 2.5rem;
-    
     }
 }
 
@@ -358,6 +353,13 @@ colButton {
         height: 35px;
     }
 
+    .Quotesheaderbar h1 {
+        text-align: center;
+        font-size: 2.8rem;
+        width: 100%;
+        margin: 5px 0 0 0;
+    }
+
     .quoteButton {
         width: 60%;
         font-size: 1.6rem;
@@ -365,13 +367,6 @@ colButton {
 
     #QuotesnavBar {
         display: none;
-    }
-
-    h1 {
-        display: block;
-        text-align: center;
-        font-size: 2.8rem;
-        width: 100%;
     }
 
     /*#hiddenQuotesDiv {
@@ -400,6 +395,3 @@ colButton {
         animation-name: zoomInUp;
     }
 }
-
-
-
